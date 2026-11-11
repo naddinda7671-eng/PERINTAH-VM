@@ -35,3 +35,14 @@ mkdir /var/moodledata
 chown -R www-data:www-data /var/www/html/moodle /var/moodledata
 chmod -R 777 /var/moodledata
 systemctl restart apache2
+
+WEB
+sudo mkdir /var/www/moodledata
+sudo chown -R www-data:www-data /var/www/moodledata
+sudo chmod -R 777 /var/www/moodledata
+
+WEB
+sudo nano /etc/php/8.3/apache2/php.ini
+Cari baris max_input_vars:
+;max_input_vars = 1000 ubah nilai menjadi max_input_vars = 5000
+sudo systemctl restart apache2
